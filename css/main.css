@@ -121,6 +121,11 @@ nav {
 
   .no-flexbox .main-nav li {
     display: inline-block;
+    float: right;
+  }
+
+  .no-flexbox .main-logo {
+    float: left;
   }
 
 .main-nav img {
