@@ -418,10 +418,22 @@ footer p {
 
   .section {
     float: left;
-    width: 50%;
     padding: 2%;
     margin-top: 2%;
   }
+
+  .half {
+    width: 50%;
+  }
+
+  .about-img {
+    width: 30%;
+  }
+
+  .about-info {
+    width: 70%;
+  }
+
 
   form {
   margin-top: 0;
