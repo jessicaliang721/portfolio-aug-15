@@ -201,6 +201,9 @@ nav {
 #welcome {
   background:
     linear-gradient(#FFF, transparent 100%),
+    -webkit-linear-gradient(#FFF, transparent 100%),
+    -moz-linear-gradient(#FFF, transparent 100%),
+    -o-linear-gradient(#FFF, transparent 100%),
     #0099FF url("../img/pointlobos.png") no-repeat fixed;
   background-position: center;
   -webkit-background-size: cover;
