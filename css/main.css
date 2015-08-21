@@ -119,6 +119,10 @@ nav {
   text-align: center;
 }
 
+  .no-flexbox .main-nav li {
+    display: inline-block;
+  }
+
 .main-nav img {
   position: relative;
   padding: 10px;
