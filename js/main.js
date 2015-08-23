@@ -56,4 +56,72 @@ var validateForm = function() {
 
 }
 
+/* Submit contact form using AJAX */
+
+$(function() {
+	//get the form
+	var form = $("#ajax-contact");
+
+	//get messages DIV
+	var formMessages = $("#form-messages");
+
+	//event listener for contact form
+	$(form).submit(function(event) {
+		//stop browser from submitting form
+		event.preventDefault();
+
+		//serialize the form data
+		var formData = $(form).serialize();
+
+		//submit form using AJAX
+		$.ajax({
+			type: 'POST',
+			url: $(form).attr('action'),
+			data: formData
+		}).done(function(response) {
+			//set message text
+			$(formMessages).text(response);
+
+			//clear the form
+			$('#name').val(""); 
+			$('#email').val("");
+			$('#subject').val("");
+			$('#message').val("");
+		}).fail(function(data) {
+			//set the message text
+			if (data.responseText !== "") {
+				//use return text to set content for formMessages element
+				$(formMessages).text(data.responseText);
+			}
+			else {
+				$(formMessages).text('An error occured and your message could not be sent.');
+			}
+		});
+	});
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
