@@ -4,33 +4,30 @@ $('nav').sticky();
 
 /* Back to top */
 
-jQuery(document).ready(function($){
-	// browser window scroll (in pixels) after which the "back to top" link is shown
-	var offset = 300,
-		//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
-		offset_opacity = 1200,
-		//duration of the top scrolling animation (in ms)
-		scroll_top_duration = 700,
-		//grab the "back to top" link
-		$back_to_top = $('.cd-top');
+// browser window scroll (in pixels) after which the "back to top" link is shown
+var offset = 300,
+	//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+	offset_opacity = 1200,
+	//duration of the top scrolling animation (in ms)
+	scroll_top_duration = 700,
+	//grab the "back to top" link
+	$back_to_top = $('.cd-top');
 
-	//hide or show the "back to top" link
-	$(window).scroll(function(){
-		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-		if( $(this).scrollTop() > offset_opacity ) { 
-			$back_to_top.addClass('cd-fade-out');
-		}
-	});
+//hide or show the "back to top" link
+$(window).scroll(function(){
+	( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+	if( $(this).scrollTop() > offset_opacity ) { 
+		$back_to_top.addClass('cd-fade-out');
+	}
+});
 
-	//smooth scroll to top
-	$back_to_top.on('click', function(event){
-		event.preventDefault();
-		$('body,html').animate({
-			scrollTop: 0 ,
-		 	}, scroll_top_duration
-		);
-	});
-
+//smooth scroll to top
+$back_to_top.on('click', function(event){
+	event.preventDefault();
+	$('body,html').animate({
+		scrollTop: 0 ,
+	 	}, scroll_top_duration
+	);
 });
 
 /* Contact form validation */
@@ -59,46 +56,51 @@ var validateForm = function() {
 /* Submit contact form using AJAX */
 
 $(function() {
-	//get the form
-	var form = $("#ajax-contact");
 
-	//get messages DIV
-	var formMessages = $("#form-messages");
+	// Get the form.
+	var form = $('#ajax-contact');
 
-	//event listener for contact form
-	$(form).submit(function(event) {
-		//stop browser from submitting form
-		event.preventDefault();
+	// Get the messages div.
+	var formMessages = $('#form-messages');
 
-		//serialize the form data
+	// Set up an event listener for the contact form.
+	$(form).submit(function(e) {
+		// Stop the browser from submitting the form.
+		e.preventDefault();
+
+		// Serialize the form data.
 		var formData = $(form).serialize();
 
-		//submit form using AJAX
+		// Submit the form using AJAX.
 		$.ajax({
 			type: 'POST',
 			url: $(form).attr('action'),
 			data: formData
-		}).done(function(response) {
-			//set message text
+		})
+		.done(function(response) {
+			// Set the message text.
 			$(formMessages).text(response);
 
-			//clear the form
-			$('#name').val(""); 
-			$('#email').val("");
-			$('#subject').val("");
-			$('#message').val("");
-		}).fail(function(data) {
-			//set the message text
-			if (data.responseText !== "") {
-				//use return text to set content for formMessages element
+			// Clear the form.
+			$('#name').val('');
+			$('#email').val('');
+			$('#message').val('');
+		})
+		.fail(function(data) {
+			// Set the message text.
+			if (data.responseText !== '') {
 				$(formMessages).text(data.responseText);
-			}
-			else {
-				$(formMessages).text('An error occured and your message could not be sent.');
+			} else {
+				console.log(data)
+				$(formMessages).text('Oops! An error occured and your message could not be sent.');
 			}
 		});
+
 	});
+
 });
+
+
 
 
 

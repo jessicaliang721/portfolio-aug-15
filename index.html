@@ -131,9 +131,7 @@
 
 				<div class="section half">
 
-					<div id="form-messages"></div>
-					
-					<form onsubmit="return validateForm()" action="contact-form-handler.php" method="POST" id="ajax-contact">
+					<form action="contact-form-handler.php" method="POST" id="ajax-contact">
 						<label for="name">Name:</label>
 						<input type="text" id="name" name="name" required>
 
@@ -149,6 +147,8 @@
 						<button type="submit">Send Message</button>
 						<button type="reset">Reset</button> 
 					</form>
+
+					<div id="form-messages"></div>
 				</div>
 			</div>
 		</div>
@@ -195,7 +195,7 @@
 		</footer>
 
 		<a href="#home" class="cd-top cd-is-visible cd-fade-out">Top</a>
-		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/jquery.sticky.js"></script>
 		<script src="js/modal.js"></script>
 		<script src="js/main.js"></script>
