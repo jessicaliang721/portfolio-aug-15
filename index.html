@@ -131,7 +131,7 @@
 
 				<div class="section half">
 
-					<form action="contact-form-handler.php" method="POST" id="ajax-contact">
+					<form action="contact-form-handler.php" method="POST" id="ajax-contact" onsubmit="return validateForm()">
 						<label for="name">Name:</label>
 						<input type="text" id="name" name="name" required>
 
