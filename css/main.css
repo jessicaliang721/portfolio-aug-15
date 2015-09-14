@@ -425,6 +425,7 @@ footer p {
   /* Main nav */
 
   .main-nav li {
+    -webkit-flex-grow: 0;
     flex-grow: 0;
   }
   
