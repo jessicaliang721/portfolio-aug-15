@@ -119,10 +119,10 @@ nav {
   text-align: center;
 }
 
-.no-flexbox .main-nav li {
+/*.no-flexbox .main-nav li {
   display: inline-block;
   float: right;
-}
+}*/
 
 .no-flexbox .main-nav li .main-logo {
   display: inline-block;
