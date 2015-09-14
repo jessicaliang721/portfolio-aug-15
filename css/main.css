@@ -119,15 +119,15 @@ nav {
   text-align: center;
 }
 
-/*.no-flexbox .main-nav li {
-  display: inline-block;
-  float: right;
-}*/
-
-.no-flexbox .main-nav li .main-logo {
+.no-flexbox .main-nav li {
   display: inline-block;
   float: left;
 }
+
+/*.no-flexbox .main-nav li .main-logo {
+  display: inline-block;
+  float: left;
+}*/
 
 .main-nav img {
   position: relative;
