@@ -103,6 +103,9 @@ nav {
 }
 
 .main-nav {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   height: 100%;
@@ -115,6 +118,7 @@ nav {
 .main-nav li {
   align-self: center;
   padding: 5px;
+  -webkit-flex-grow: 1;
   flex-grow: 1;
   text-align: center;
 }
@@ -123,11 +127,6 @@ nav {
   display: inline-block;
   float: left;
 }
-
-/*.no-flexbox .main-nav li .main-logo {
-  display: inline-block;
-  float: left;
-}*/
 
 .main-nav img {
   position: relative;
