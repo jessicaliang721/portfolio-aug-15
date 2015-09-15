@@ -53,7 +53,7 @@ var validateForm = function() {
 
 }
 
-/* Submit contact form using AJAX */
+/* Submit contact form using AJAX (http://blog.teamtreehouse.com/create-ajax-contact-form) */
 
 $(function() {
 
@@ -68,7 +68,7 @@ $(function() {
 		// Stop the browser from submitting the form.
 		e.preventDefault();
 
-		// Serialize the form data.
+		// Merge all form fields before submission.
 		var formData = $(form).serialize();
 
 		// Submit the form using AJAX.
